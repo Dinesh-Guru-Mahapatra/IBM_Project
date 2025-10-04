@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DocFinder - Booking Confirmation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+    <h1 class="logo">DocFinder</h1>
+    <nav class="nav-links">
+<a href="index.html">Home</a>
+    <a href="hospitals.html">Hospitals</a>
+    <a href="#">About</a>
+        <a href="#">Contact</a>
+       </nav></div>
+  </nav>
+
+  <section class="confirmation">
+    <h2>Booking Confirmed ✅</h2>
+    <div id="bookingDetails">
+      <p>Your appointment has been successfully booked!</p>
+      <div id="detailsContainer"></div>
+    </div>
+    <div class="confirmation-buttons">
+    <a href="index.html" class="btn btn-primary">Back to Home</a>
+      <a href="hospitals.html" class="btn btn-secondary">Book Another</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-about">
+        <h4>DocFinder</h4>
+        <p>Making healthcare accessible, one click at a time.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+        <li><a href="index.html">Home</a></li>
+          <li><a href="hospitals.html">Hospitals</a></li>
+        <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>Email: support@docfinder.com</p>
+    <p>Phone: +91 9876543210</p>
+    <p>Developed by <strong>Dinesh Guru Mahapatra</strong></p>
+        <p>
+        <a href="https://www.linkedin.com/in/dinesh-guru-mahapatra" target="_blank">LinkedIn</a> | 
+          <a href="https://github.com/dineshgurumahapatra" target="_blank">GitHub</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 DocFinder. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const bookingDetails = JSON.parse(sessionStorage.getItem('bookingDetails') || '{}');
+      const detailsContainer = document.getElementById('detailsContainer');
+      
+      if (bookingDetails.hospitalName) {
+        detailsContainer.innerHTML = `
+          <div class="booking-summary">
+            <h3>Appointment Summary</h3>
+        <p><strong>Hospital:</strong> ${bookingDetails.hospitalName}</p>
+         <p><strong>Date:</strong> ${new Date(bookingDetails.date).toLocaleDateString('en-IN')}</p>
+        <p><strong>Time Slot:</strong> ${bookingDetails.timeSlot}</p>
+            <p><strong>Booking ID:</strong> DF${Date.now().toString().slice(-6)}</p>
+          </div>
+        `;
+
+        sessionStorage.removeItem('bookingDetails');
+      } else {
+        detailsContainer.innerHTML = `
+          <p>No booking details found. Please make a new booking.</p>
+        `;
+      }
+    });
+  </script>
+</body>
+</html>

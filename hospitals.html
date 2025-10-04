@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DocFinder - Hospitals</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="hospitals.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <h1 class="logo">DocFinder</h1>
+      <nav class="nav-links">
+    <a href="index.html">Home</a>
+        <a href="hospitals.html">Hospitals</a>
+      </nav>
+    </div>
+  </nav>
+
+  <section class="hospital-list">
+    <h2 class="section-title">Available Hospitals</h2>
+    
+    <div class="filter-container">
+      <label for="cityFilter">Filter by City:</label>
+      <select id="cityFilter">
+        <option value="all">All Cities</option>
+        <option value="Bhubaneswar">Bhubaneswar</option>
+        <option value="Cuttack">Cuttack</option>
+        <option value="Puri">Puri</option>
+        <option value="New Delhi">New Delhi</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Bengaluru">Bengaluru</option>
+        <option value="Hyderabad">Hyderabad</option>
+        <option value="Chennai">Chennai</option>
+        <option value="Kolkata">Kolkata</option>
+        <option value="Pune">Pune</option>
+      </select>
+    </div>
+
+    <div id="hospitalContainer" class="cards"></div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-about">
+        <h4>DocFinder</h4>
+        <p>Making healthcare accessible, one click at a time.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+    <li><a href="index.html">Home</a></li>
+        <li><a href="hospitals.html">Hospitals</a></li>
+        <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+    <p>Email: support@docfinder.com</p>
+    <p>Phone: +91 9876543210</p>
+        <p>Developed by <strong>Dinesh Guru Mahapatra</strong></p>
+    <p>
+          <a href="https://www.linkedin.com/in/dinesh-guru-mahapatra" target="_blank">LinkedIn</a> | 
+          <a href="https://github.com/dineshgurumahapatra" target="_blank">GitHub</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 DocFinder. All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
